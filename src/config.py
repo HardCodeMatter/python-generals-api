@@ -1,0 +1,5 @@
+SQLALCHEMY_URL = 'sqlite:///./generals_game.db'
+SQLALCHEMY_ECHO = True
+
+SESSION_AUTOCOMMIT = False
+SESSION_AUTOFLUSH = False
