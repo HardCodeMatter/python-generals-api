@@ -1,13 +1,11 @@
-from pydantic import BaseModel
-
-from dto.user import User
+from pydantic import BaseModel, Field
 
 
 class Property(BaseModel):
-    points: int
-    health: int
-    energy: int
-    ammunition: int
+    points: int = Field(default=5)
+    health: int = Field(default=100)
+    energy: int = Field(default=100)
+    ammunition: int = Field(default=5)
 
     user_id: int
 
