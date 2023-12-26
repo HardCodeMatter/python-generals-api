@@ -9,7 +9,7 @@ class Property(BaseModel):
     energy: int
     ammunition: int
 
-    user_id: User | None
+    user_id: int
 
     class Config:
         orm_mode = True

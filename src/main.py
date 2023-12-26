@@ -1,17 +1,19 @@
 import uvicorn
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI
 
 from database import Base, engine
 from routers import user as UserRouter
+from routers import property as PropertyRouter
 
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title='General Game API',
-    version='0.1.0',
+    version='0.1.1',
 )
 app.include_router(UserRouter.router, prefix='/user')
+app.include_router(PropertyRouter.router, prefix='/property')
 
 if __name__ == '__main__':
     uvicorn.run(
