@@ -1,3 +1,4 @@
+import typing
 from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped
@@ -5,7 +6,8 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
 
 from database import Base
-from models.property import Property
+if typing.TYPE_CHECKING:
+    from models.property import Property
 
 
 class User(Base):

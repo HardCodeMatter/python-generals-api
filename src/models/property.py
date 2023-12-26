@@ -1,12 +1,13 @@
+import typing
 from sqlalchemy import Integer
-from sqlalchemy import String
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
 
 from database import Base
-from models.user import User
+if typing.TYPE_CHECKING:
+    from models.user import User
 
 
 class Property(Base):
